@@ -1,15 +1,13 @@
 // URL for the JSON file.  Normally it comes from the line below, but due to http/https issues I saved a local copy.
 // var url = 'http://stats.nba.com/stats/commonteamroster?LeagueID=00&Season=2016-17&TeamID=1610612744';
 
-var teamID = document.getElementById('teamInput').value;
-console.log(teamID + ' is a ' + typeof teamID);
-var url = 'https://jeffbautista.github.io/NBA-combined-player-weight/' + teamID + '.JSON';
-
 // When the button is clicked, run a callback function
 $('#quote').click(function() {
-
+  var teamID = document.getElementById('teamInput').value;
+  console.log(teamID + ' is a ' + typeof teamID);
   // Retrieve the data from the endpoint 
   // Store the player data in a variable
+  var url = 'https://jeffbautista.github.io/NBA-combined-player-weight/' + teamID + '.JSON';
   $.getJSON (url, function(data) {
     var playerData = data['resultSets'][0]['rowSet'];
  
