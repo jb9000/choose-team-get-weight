@@ -23,14 +23,14 @@ $('#quote').click(function() {
     // Find the Team Name
     var url2 = 'https://jeffbautista.github.io/choose-team-get-weight/' + teamID + 'B.JSON';
     $.getJSON (url2, function(data2) {
-       var teamData = data2['resultSets'][0]['rowSet'];
-       console.log(teamData);
+       var teamName = data2['resultSets'][0]['rowSet'][0][2];
+       console.log(teamName);
     });
     
     
     // Display the total weight in the paragraph above the Player List <ul>
     var intro = document.getElementById('intro');
-    intro.innerHTML = "The combined weight of the players below is " + total + " pounds.";
+    intro.innerHTML = "The combined weight of all " + teamName + " players (listed below) is " + total + " pounds.";
     
     var playerListUL = document.getElementById('text-block');
     playerListUL.innerHTML = playerString;
