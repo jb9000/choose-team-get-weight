@@ -2,7 +2,7 @@
 // var url = 'http://stats.nba.com/stats/commonteamroster?LeagueID=00&Season=2016-17&TeamID=1610612744';
 
 var teamID = document.getElementById('teamInput').value;
-console.log(typeof teamID);
+console.log(teamID + ' is a ' + typeof teamID);
 var url = 'https://jeffbautista.github.io/NBA-combined-player-weight/' + teamID + '.JSON';
 
 // When the button is clicked, run a callback function
