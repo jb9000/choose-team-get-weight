@@ -24,11 +24,11 @@ $('#quote').click(function() {
     var url2 = 'https://jeffbautista.github.io/choose-team-get-weight/' + teamID + 'B.JSON';
     $.getJSON (url2, function(data2) {
        var teamName = data2['resultSets'][0]['rowSet'][0][2];
-       console.log(teamName);
+       var teamCity = data2['resultSets'][0]['rowSet'][0][4];
        
        // Display the total weight in the paragraph above the Player List <ol>
        var intro = document.getElementById('intro');
-       intro.innerHTML = "The combined weight of all " + teamName + " players (listed below) is " + total + " pounds.";
+       intro.innerHTML = "Combined weight of all " + teamCity + " " + teamName + " players:  " + total + " pounds.";
     });
  
     
