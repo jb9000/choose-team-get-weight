@@ -8,9 +8,17 @@ $('#quote').click(function() {
   // Retrieve the data from the endpoint 
   // Store the player data in a variable
   var url = 'https://jeffbautista.github.io/choose-team-get-weight/' + teamID + '.JSON';
+  var url2 = 'https://jeffbautista.github.io/choose-team-get-weight/' + teamID + 'B.JSON';
   $.getJSON (url, function(data) {
     var playerData = data['resultSets'][0]['rowSet'];
  
+    var url2 = 'https://jeffbautista.github.io/choose-team-get-weight/' + teamID + 'B.JSON';
+    $.getJSON (url2, function(data) {
+       var teamData = data['resultSets'][0]['rowSet'][0][2];
+       console.log(teamData);
+    });
+    
+    
     // Use playerData.forEach() to find the combined player weight
     var total = 0;
     playerData.forEach(function(a) {
