@@ -1,0 +1,24 @@
+<body>
+<h1>Choose Team, Get Weight</h1>
+
+<main> 
+  <div>
+    <p>Normally the NBA data would come from <a href="http://stats.nba.com/team/#!/1610612744/" target="_blank">here</a> but the endpoint is HTTP, so I saved a version <a href="https://jeffbautista.github.io/NBA-combined-player-weight/profiles.JSON" target="_blank">here</a> so that it uses HTTPS.</p>
+  </div>
+  <div>
+    <input id="teamInput">
+    <button id="quote">Find the combined weights of all players</button>
+  </div>
+  <p></p>
+  <div id="intro"></div>
+  <ul id="text-block"></ul>
+</main>
+  
+</body>
+
+    <!-- Your web-app is https, so your scripts need to be too -->
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"
+  integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+crossorigin="anonymous"></script>
+
+<script src="https://jeffbautista.github.io/choose-team-get-weight/client.js"></script>
