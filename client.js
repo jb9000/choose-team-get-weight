@@ -7,6 +7,7 @@ var url = 'https://jeffbautista.github.io/NBA-combined-player-weight/' + teamID 
 // When the button is clicked, run a callback function
 $('#quote').click(function() {
 
+  console.log(teamID);
   // Retrieve the data from the endpoint 
   // Store the player data in a variable
   $.getJSON (url, function(data) {
