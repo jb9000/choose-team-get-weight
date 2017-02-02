@@ -7,7 +7,7 @@ $('#quote').click(function() {
   console.log(teamID + ' is a ' + typeof teamID);
   // Retrieve the data from the endpoint 
   // Store the player data in a variable
-  var url = 'https://jeffbautista.github.io/NBA-combined-player-weight/' + teamID + '.JSON';
+  var url = 'https://jeffbautista.github.io/choose-team-get-weight/' + teamID + '.JSON';
   $.getJSON (url, function(data) {
     var playerData = data['resultSets'][0]['rowSet'];
  
