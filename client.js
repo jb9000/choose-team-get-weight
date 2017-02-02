@@ -4,21 +4,9 @@
 // When the button is clicked, run a callback function
 $('#quote').click(function() {
   var teamID = document.getElementById('teamInput').value;
-  console.log(teamID + ' is a ' + typeof teamID);
-  // Retrieve the data from the endpoint 
-  // Store the player data in a variable
   var url = 'https://jeffbautista.github.io/choose-team-get-weight/' + teamID + '.JSON';
-  var url2 = 'https://jeffbautista.github.io/choose-team-get-weight/' + teamID + 'B.JSON';
   $.getJSON (url, function(data) {
-    var playerData = data['resultSets'][0]['rowSet'];
- 
-    var url2 = 'https://jeffbautista.github.io/choose-team-get-weight/' + teamID + 'B.JSON';
-    $.getJSON (url2, function(data) {
-       var teamData = data['resultSets'][0]['rowSet'][0][2];
-       console.log(teamData);
-    });
-    
-    
+    var playerData = data['resultSets'][0]['rowSet'];    
     // Use playerData.forEach() to find the combined player weight
     var total = 0;
     playerData.forEach(function(a) {
@@ -31,6 +19,14 @@ $('#quote').click(function() {
       playerString+= '<li>' + playerData[i][3] + ': ' + playerData[i][7] + ' pounds.</li>';
     }
     playerString+= '</ul>';
+    
+    // Find the Team Name
+    var url2 = 'https://jeffbautista.github.io/choose-team-get-weight/' + teamID + 'B.JSON';
+    $.getJSON (url2, function(data2) {
+       var teamData = data2['resultSets'][0]['rowSet'];
+       console.log(teamData);
+    });
+    
     
     // Display the total weight in the paragraph above the Player List <ul>
     var intro = document.getElementById('intro');
