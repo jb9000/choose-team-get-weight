@@ -14,11 +14,11 @@ $('#quote').click(function() {
     });
     
     // Iterate through playerData array and build a string
-    var playerString = '<ul>';
+    var playerString = '<ol>';
     for (i=0; i<playerData.length; i++) {
       playerString+= '<li>' + playerData[i][3] + ': ' + playerData[i][7] + ' pounds.</li>';
     }
-    playerString+= '</ul>';
+    playerString+= '</ol>';
     
     // Find the Team Name
     var url2 = 'https://jeffbautista.github.io/choose-team-get-weight/' + teamID + 'B.JSON';
@@ -26,14 +26,14 @@ $('#quote').click(function() {
        var teamName = data2['resultSets'][0]['rowSet'][0][2];
        console.log(teamName);
        
-       // Display the total weight in the paragraph above the Player List <ul>
+       // Display the total weight in the paragraph above the Player List <ol>
        var intro = document.getElementById('intro');
        intro.innerHTML = "The combined weight of all " + teamName + " players (listed below) is " + total + " pounds.";
     });
  
     
-    var playerListUL = document.getElementById('text-block');
-    playerListUL.innerHTML = playerString;
+    var playerListOL = document.getElementById('text-block');
+    playerListOL.innerHTML = playerString;
       
   });
 
